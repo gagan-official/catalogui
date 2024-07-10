@@ -1,0 +1,59 @@
+.menubarCont {
+  --marginBorderBottom: 2px;
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  position: relative;
+  /* border-bottom: var(--marginBorderBottom) solid var(--borderColor); */
+}
+
+/* .menuList {
+    cursor: pointer;
+} */
+.border {
+  border-bottom: 3px solid #0000;
+  padding: 0.8rem;
+  margin-bottom: calc(var(--marginBorderBottom) * -1);
+  transition: 0.2s;
+  transition-property: color, border-color;
+}
+.border:hover,
+.border.active {
+  color: var(--darkThemeColor);
+  border-bottom-color: var(--labelColor);
+}
+.border.active {
+  border-bottom-color: var(--themeColor);
+}
+.solid {
+  padding: 0.3rem 1rem;
+  border-radius: 5px;
+}
+.solid:hover {
+  background-color: var(--labelColor);
+}
+.solid.active {
+  color: #fff;
+  background-color: var(--themeColor);
+}
+
+@media only screen and (max-width: 640px) {
+  .menubarCont {
+    overflow: auto clip;
+  }
+  .menubarCont::after {
+    --widthMargin: 10%;
+    content: "";
+    position: sticky;
+    right: 0;
+    top: 0;
+    background: linear-gradient(to left, #fff, #0000);
+    min-height: 100%;
+    min-width: var(--widthMargin);
+    margin-left: calc(var(--widthMargin) * -1);
+    pointer-events: none;
+  }
+  .menubarCont::-webkit-scrollbar {
+    display: none;
+  }
+}
