@@ -2,7 +2,7 @@ import { RiCollapseDiagonalLine, RiExpandDiagonalLine } from "react-icons/ri";
 import CustomButton from "../CustomButton/CustomButton";
 import { FiPlusCircle } from "react-icons/fi";
 import Menubar from "../Menubar/Menubar";
-import LineChart from "./LineChart";
+import AreaChart from "./LineChart";
 import { useContext, useState } from "react";
 import { Context } from "../../context/ContextComp";
 
@@ -62,9 +62,8 @@ function ChartComp() {
           />
         </div>
 
-        <LineChart timeFrame={timeFrame} setTimeFrame={setTimeFrame} />
+        <AreaChart timeFrame={timeFrame} setTimeFrame={setTimeFrame} />
       </div>
-      {/* <LineChart timeFrame={timeFrame} setTimeFrame={setTimeFrame} /> */}
     </section>
   );
 }

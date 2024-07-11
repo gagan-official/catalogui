@@ -8,14 +8,15 @@
   font-size: 4.375rem;
   position: relative;
   width: fit-content;
+  padding-right: 4rem;
 }
 
 .amountLabel {
   position: absolute;
-  top: 1.2rem;
-  left: calc(100% + 0.5rem);
+  top: 17%;
+  right: -0.8rem;
   color: var(--labelColor);
-  font-size: 1.5rem;
+  font-size: .45em;
 }
 
 .subAmt {
@@ -31,9 +32,10 @@ div.apexcharts-yaxistooltip.apexcharts-theme-light {
   padding: 0.25rem 0.75rem;
   box-shadow: none;
   outline: none;
-  left: 94% !important;
+  left: auto !important;
+  right: -0.2rem !important;
   font-size: 1rem !important;
-  transition: top .1s;
+  transition: top 0.1s;
 }
 div.apexcharts-yaxistooltip.apexcharts-theme-dark::before,
 div.apexcharts-yaxistooltip.apexcharts-theme-light::before,
@@ -44,4 +46,16 @@ div.apexcharts-yaxistooltip.apexcharts-theme-light::after {
 div.apexcharts-xaxistooltip.apexcharts-theme-dark,
 div.apexcharts-xaxistooltip.apexcharts-theme-light {
   display: none;
+}
+
+@media only screen and (max-width: 400px) {
+  #root {
+    padding: 1rem;
+  }
+  .amountHead {
+    font-size: 3.375rem;
+  }
+  .amountLabel {
+      right: .5rem;
+  }
 }
