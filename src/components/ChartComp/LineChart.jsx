@@ -241,6 +241,14 @@ const AreaChart = ({ timeFrame }) => {
         },
       },
     },
+
+    legend: {
+      fontSize: "17px",
+      fontFamily: "CircularStd",
+      labels: {
+        useSeriesColors: true,
+      },
+    },
   };
 
   const series = [
