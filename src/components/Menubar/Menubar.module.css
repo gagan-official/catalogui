@@ -30,7 +30,7 @@
   border-radius: 5px;
 }
 .solid:hover {
-  background-color: var(--labelColor);
+  background-color: #eee;
 }
 .solid.active {
   color: #fff;

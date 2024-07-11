@@ -1,18 +1,31 @@
+import { useContext } from "react";
 import "./App.css";
 import ChartComp from "./components/ChartComp/ChartComp";
 import Menubar from "./components/Menubar/Menubar";
+import { Context } from "./context/ContextComp";
 
 function App() {
   const amount = 63179.71;
+  const { fullscreen } = useContext(Context);
+
+  const fullscreenBlur = fullscreen ? "transition-all blur-md" : ""
 
   return (
     <>
-      <h1 className="amountHead">
+      <h1
+        className={`amountHead ${fullscreenBlur}`}
+      >
         {" "}
         {amount.toLocaleString()} <span className="amountLabel">USD</span>{" "}
       </h1>
-      <h6 className="subAmt">+ 2,161.42 (3.54%)</h6>
-      <Menubar data={dashboardMenuData} startVal={2} containerClassName="[border-bottom-width:--marginBorderBottom] border-[--borderColor]" />
+      <h6 className={`subAmt ${fullscreenBlur}`}>
+        + 2,161.42 (3.54%)
+      </h6>
+      <Menubar
+        data={dashboardMenuData}
+        startVal={2}
+        containerClassName={`[border-bottom-width:--marginBorderBottom] border-[--borderColor] ${fullscreenBlur}`}
+      />
       <ChartComp />
     </>
   );

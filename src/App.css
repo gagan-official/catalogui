@@ -22,3 +22,26 @@
   color: var(--greenShade);
   font-size: 1.125rem;
 }
+
+div.apexcharts-yaxistooltip.apexcharts-theme-dark,
+div.apexcharts-yaxistooltip.apexcharts-theme-light {
+  background: var(--darkThemeColor);
+  border: none;
+  border-radius: 5px;
+  padding: 0.25rem 0.75rem;
+  box-shadow: none;
+  outline: none;
+  left: 94% !important;
+  font-size: 1rem !important;
+  transition: top .1s;
+}
+div.apexcharts-yaxistooltip.apexcharts-theme-dark::before,
+div.apexcharts-yaxistooltip.apexcharts-theme-light::before,
+div.apexcharts-yaxistooltip.apexcharts-theme-dark::after,
+div.apexcharts-yaxistooltip.apexcharts-theme-light::after {
+  content: none;
+}
+div.apexcharts-xaxistooltip.apexcharts-theme-dark,
+div.apexcharts-xaxistooltip.apexcharts-theme-light {
+  display: none;
+}

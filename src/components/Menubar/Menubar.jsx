@@ -4,7 +4,7 @@ import styles from "./Menubar.module.css";
 // menuStyleType: "solid" / default: border
 // startVal <Number>
 
-function Menubar({ data, containerClassName, menuStyleType, startVal }) {
+function Menubar({ data, containerClassName, menuStyleType, startVal, onClick }) {
   const [menuID, setMenuID] = useState(startVal);
   const isSolid = menuStyleType?.includes("solid");
   const menuStyleClass = isSolid ? "solid" : "border";
@@ -24,7 +24,7 @@ function Menubar({ data, containerClassName, menuStyleType, startVal }) {
               className={`menuList cursor-pointer text-[--lightFontColor] ${
                 styles[menuStyleClass]
               } ${menuID === items[id] ? styles.active : ""}`}
-              onClick={() => setMenuID(items[id])}
+              onClick={() => {setMenuID(items[id]); onClick && onClick(items[name])}}
             >
               {items[name]}
             </li>
